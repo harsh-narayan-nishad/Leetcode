@@ -4,6 +4,7 @@ public:
         int temp = n;
         int temp1=0;
 
+        //edge case
         if(n==0){
             return 1;
         }
