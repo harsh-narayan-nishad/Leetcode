@@ -1,12 +1,12 @@
 class Solution {
 public:
     string decodeMessage(string key, string message) {
-        //creater mapping
+        // Create mapping 
         char start = 'a';
-        char mapping[300] = {0};
+        char mapping[280] = {0};
 
         for(auto ch:key){
-            if(ch != ' ' && mapping[ch] == 0){
+            if(ch!= ' ' && mapping[ch] == 0){
                 mapping[ch] = start;
                 start++;
             }
@@ -14,7 +14,7 @@ public:
 
         //use mapping
         string ans;
-
+        
         for(auto ch: message){
             if(ch == ' '){
                 ans.push_back(' ');
@@ -25,5 +25,6 @@ public:
             }
         }
         return ans;
+        
     }
 };
