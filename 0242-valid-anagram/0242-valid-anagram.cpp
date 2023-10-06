@@ -1,13 +1,23 @@
-
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-      sort(s.begin(), s.end());
-      sort(t.begin(), t.end());
+        int freq[256] = {0};
 
-        if(s==t){
-            return true;
+        for(int i=0; i<s.size(); i++){
+            freq[s[i]]+=1;
         }
-        return false;
+
+        for(int i=0; i<t.size(); i++){
+            freq[t[i]]-=1;
+        }
+
+        for(int i=0; i<256; i++){
+            if(freq[i] != 0){
+                return false;
+            }
+        }
+
+        return true;
+        
     }
 };
